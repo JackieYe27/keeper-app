@@ -1,9 +1,13 @@
-function Note() {
+function Note( {notes} ) {
+    
     return(
-        <div className="note">
-            <h1>Title</h1>
-            <p>Content</p>
-        </div>
+        notes.map(note => {
+            const {key, title, content} = note
+            return <div className="note" key={key}>
+                <h1>{title}</h1>
+                <p>{content}</p>
+            </div>
+        })
     )
 }
 
